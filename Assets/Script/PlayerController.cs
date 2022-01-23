@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 
     float HorizontalMove = 0f;
 
-    float x = 0;
 
     private void Start()
     {

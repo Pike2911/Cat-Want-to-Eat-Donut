@@ -9,6 +9,7 @@ public class item : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
+            ScoreCounter.ScoreValue += 1;
         }
             
     }
