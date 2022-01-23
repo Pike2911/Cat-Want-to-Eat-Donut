@@ -6,6 +6,10 @@ public class item : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+            
     }
 }
