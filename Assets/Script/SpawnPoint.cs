@@ -10,28 +10,29 @@ public class SpawnPoint : MonoBehaviour
     private Vector2 randomPosition;
 
     private float xPos;
+    private float timer;
 
     private void Start()
     {
         int Count = 0;
 
         while(Count <= 0 || Count <= 5)
-        { }
+        {
+            xPos = UnityEngine.Random.Range(-2.3f, 2.8f);
 
-            if(Count <= 0|| Count <= 5)
-            {
             CreateItem();
 
             Count += 1;
-            }
+        }
+
+            
     }
     private void Update()
     {
-        xPos = UnityEngine.Random.Range(-2.3f, 2.8f);
-
+        timer += Time.deltaTime;
     }
     private void CreateItem()
     {
-        Instantiate(Donut, new Vector2(xPos, transform.position.y),Quaternion.identity);
+        Instantiate(Donut, new Vector2(xPos, transform.position.y), Quaternion.identity); 
     }
 }
