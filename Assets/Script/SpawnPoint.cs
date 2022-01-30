@@ -4,32 +4,27 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    [SerializeField] private float spawnSpeed = 5;
-
     public Transform Donut;
     private Vector2 randomPosition;
 
     private float xPos;
     private float timer;
+    private int randomspawn;
 
-    private void Start()
-    {
-        int Count = 0;
-
-        while(Count <= 0 || Count <= 5)
-        {
-            xPos = UnityEngine.Random.Range(-2.3f, 2.8f);
-
-            CreateItem();
-
-            Count += 1;
-        }
-
-            
-    }
     private void Update()
     {
         timer += Time.deltaTime;
+
+        xPos = UnityEngine.Random.Range(-2.3f, 2.8f);
+
+        if (timer >= 2)
+        { 
+            CreateItem();
+
+            timer = 0;
+
+            randomspawn = UnityEngine.Random.Range(1, 50);
+        }
     }
     private void CreateItem()
     {
