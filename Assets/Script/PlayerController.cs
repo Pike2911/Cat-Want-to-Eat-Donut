@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float Walkspeed = 4f;
+    [SerializeField] private float Walkspeed = 70f;
 
     private Rigidbody2D rb2D;
 
-    float HorizontalMove = 0f;
+    private float HorizontalMove = 0f;
+    public static int PlayerLife = 2;
 
 
     private void Start()

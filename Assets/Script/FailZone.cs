@@ -5,13 +5,23 @@ using UnityEngine;
 public class FailZone : MonoBehaviour
 {
     public Transform Restart;
+    public Transform PlayAgain;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Score")
         {
             Destroy(collision.gameObject);
             PauseGame();
-            Restart.gameObject.SetActive(true);
+            Debug.Log(PlayerController.PlayerLife);
+            if (PlayerController.PlayerLife > 0)
+            {
+                Debug.Log("True");
+                Restart.gameObject.SetActive(true);
+            }
+            else if(PlayerController.PlayerLife == 0)
+            {
+                PlayAgain.gameObject.SetActive(true);
+            }
         }
 
     }

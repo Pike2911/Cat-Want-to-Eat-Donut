@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField]private AudioSource Audio;
+
     public Transform StartButton;
+    public Transform PlayButton;
+
+
     private void Start()
     {
         PauseGame();
@@ -14,11 +19,21 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
         ResumeGame();
+
+        PlayerController.PlayerLife -= 1;
+        Debug.Log(PlayerController.PlayerLife);
     }
     public void StartGame()
     {
         StartButton.gameObject.SetActive(false);
         ResumeGame();
+        Audio.Play();
+    }
+    public void PlayAgain()
+    {
+            ScoreCounter.ScoreValue = 0;
+        PlayerController.PlayerLife = 2;
+            SceneManager.LoadScene("SampleScene"); 
     }
     private void ResumeGame()
     {
