@@ -8,8 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField]private AudioSource Audio;
 
     public Transform StartButton;
-    public Transform PlayButton;
-
+    public Transform ResumeButton;
 
     private void Start()
     {
@@ -19,7 +18,6 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
         ResumeGame();
-
         PlayerController.PlayerLife -= 1;
         Debug.Log(PlayerController.PlayerLife);
     }
@@ -27,20 +25,31 @@ public class GameController : MonoBehaviour
     {
         StartButton.gameObject.SetActive(false);
         ResumeGame();
-        Audio.Play();
     }
     public void PlayAgain()
     {
             ScoreCounter.ScoreValue = 0;
-        PlayerController.PlayerLife = 2;
+            PlayerController.PlayerLife = 2;
             SceneManager.LoadScene("SampleScene"); 
+    }
+    public void ResumeButton_()
+    {
+        ResumeGame();
+        ResumeButton.gameObject.SetActive(false);
+    }
+    public void PauseButton_()
+    {
+        PauseGame();
+        ResumeButton.gameObject.SetActive(true);
     }
     private void ResumeGame()
     {
         Time.timeScale = 1;
+        Audio.Play();
     }
     private void PauseGame()
     {
         Time.timeScale = 0;
+        Audio.Stop();
     }
 }

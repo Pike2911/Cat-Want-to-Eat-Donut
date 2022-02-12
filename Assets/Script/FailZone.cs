@@ -15,7 +15,6 @@ public class FailZone : MonoBehaviour
             Debug.Log(PlayerController.PlayerLife);
             if (PlayerController.PlayerLife > 0)
             {
-                Debug.Log("True");
                 Restart.gameObject.SetActive(true);
             }
             else if(PlayerController.PlayerLife == 0)
