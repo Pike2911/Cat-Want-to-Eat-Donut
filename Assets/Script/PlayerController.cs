@@ -18,10 +18,11 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        HorizontalMove = Input.GetAxisRaw("Horizontal") * Walkspeed * Time.deltaTime;
+        
     }
     private void FixedUpdate()
     {
+        HorizontalMove = Input.GetAxisRaw("Horizontal") * Walkspeed * Time.deltaTime;
         rb2D.MovePosition(new Vector2(transform.position.x + HorizontalMove, 0f));
     }
 }

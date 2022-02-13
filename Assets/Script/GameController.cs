@@ -32,12 +32,12 @@ public class GameController : MonoBehaviour
             PlayerController.PlayerLife = 2;
             SceneManager.LoadScene("SampleScene"); 
     }
-    public void ResumeButton_()
+    public void ResumeGameMenu()
     {
         ResumeGame();
         ResumeButton.gameObject.SetActive(false);
     }
-    public void PauseButton_()
+    public void SettingButton()
     {
         PauseGame();
         ResumeButton.gameObject.SetActive(true);
