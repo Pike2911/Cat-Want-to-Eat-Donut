@@ -19,7 +19,6 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         ResumeGame();
         PlayerController.PlayerLife -= 1;
-        Debug.Log(PlayerController.PlayerLife);
     }
     public void StartGame()
     {

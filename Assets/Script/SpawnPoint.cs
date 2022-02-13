@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    public Transform Donut;
-    private Vector2 randomPosition;
+    [SerializeField] private Transform Donut;
 
     private float xPos;
     private float timer;
