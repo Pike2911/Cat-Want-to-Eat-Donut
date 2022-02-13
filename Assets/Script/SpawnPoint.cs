@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] private Transform Donut;
+    [SerializeField] private float SpawnTime = 2;
 
     private float xPos;
     private float timer;
@@ -16,7 +17,7 @@ public class SpawnPoint : MonoBehaviour
 
         xPos = UnityEngine.Random.Range(-2.3f, 2.8f);
 
-        if (timer >= 2)
+        if (timer >= SpawnTime)
         { 
             CreateItem();
 
@@ -27,6 +28,6 @@ public class SpawnPoint : MonoBehaviour
     }
     private void CreateItem()
     {
-        Instantiate(Donut, new Vector2(xPos, transform.position.y), Quaternion.identity); 
+        Instantiate(Donut, new Vector2(xPos, transform.position.y), Quaternion.identity);
     }
 }

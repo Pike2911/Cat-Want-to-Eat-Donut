@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField]private AudioSource Audio;
 
     public Transform StartButton;
-    public Transform ResumeButton;
+    public Transform SettingMenu;
 
     private void Start()
     {
@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         ResumeGame();
         PlayerController.PlayerLife -= 1;
+
     }
     public void StartGame()
     {
@@ -34,12 +35,16 @@ public class GameController : MonoBehaviour
     public void ResumeGameMenu()
     {
         ResumeGame();
-        ResumeButton.gameObject.SetActive(false);
+        SettingMenu.gameObject.SetActive(false);
     }
     public void SettingButton()
     {
         PauseGame();
-        ResumeButton.gameObject.SetActive(true);
+        SettingMenu.gameObject.SetActive(true);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
     private void ResumeGame()
     {
