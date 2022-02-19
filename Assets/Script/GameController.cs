@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField]private AudioSource Audio;
-
-    public Transform StartButton;
-    public Transform SettingMenu;
+    [SerializeField] private AudioSource Audio;
+    [SerializeField] private Transform StartButton;
+    [SerializeField] private Transform SettingMenu;
 
     private void Start()
     {
