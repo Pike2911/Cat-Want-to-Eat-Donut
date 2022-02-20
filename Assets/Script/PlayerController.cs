@@ -1,28 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public static int PlayerLife = 2;
+
     [SerializeField] private float Walkspeed = 70f;
 
     private Rigidbody2D rb2D;
+    private Animator animator;
 
-    private float HorizontalMove = 0f;
-    public static int PlayerLife = 2;
+    private Touch theTouch;
+
+    //private float HorizontalMove = 0f;
+
+    
+    
 
 
+    public void Score()
+    {
+        ScoreCounter.ScoreValue += 1;
+        animator.SetTrigger("EatDonut");
+    }
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
+        if(Time.timeScale == 1)
+        {
+            if (Input.touchCount > 0)
+            {
+                theTouch = Input.GetTouch(0);
+                if (theTouch.phase == TouchPhase.Moved)
+                {
+                    Vector3 worldPoint = Camera.main.ScreenToWorldPoint(theTouch.position);
+                    transform.position = (new Vector2(worldPoint.x, transform.position.y));
+                }
+            }
+        }
         
     }
-    private void FixedUpdate()
-    {
-        HorizontalMove = Input.GetAxisRaw("Horizontal") * Walkspeed * Time.deltaTime;
-        rb2D.MovePosition(new Vector2(transform.position.x + HorizontalMove, 0f));
-    }
+    //private void FixedUpdate()
+    //{
+    //    HorizontalMove = Input.GetAxisRaw("Horizontal") * Walkspeed * Time.deltaTime;
+    //    rb2D.MovePosition(new Vector2(theTouch.position.x, 0f));
+    //}
+    
 }

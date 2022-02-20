@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7541220168942756898}
   - component: {fileID: 9053751435504518873}
   - component: {fileID: 7691212716873223983}
+  - component: {fileID: 7595644629557613391}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -121,3 +122,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.4
+--- !u!95 &7595644629557613391
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436292848192822084}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1715f1966971d164d800664ada3999de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
