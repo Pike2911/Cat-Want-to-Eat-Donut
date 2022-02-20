@@ -15,7 +15,7 @@ public class SpawnPoint : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        xPos = UnityEngine.Random.Range(-2.3f, 2.8f);
+        xPos = UnityEngine.Random.Range(-2.66f, 3.2f);
 
         if (timer >= SpawnTime)
         { 
