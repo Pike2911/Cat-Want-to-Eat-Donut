@@ -40,7 +40,18 @@ public class PlayerController : MonoBehaviour
                 if (theTouch.phase == TouchPhase.Moved)
                 {
                     Vector3 worldPoint = Camera.main.ScreenToWorldPoint(theTouch.position);
-                    transform.position = (new Vector2(worldPoint.x, transform.position.y));
+                    if (worldPoint.x < -2f)
+                    {
+                        transform.position = (new Vector2(-1.9f, transform.position.y));
+                    }
+                    else if (worldPoint.x > 2.42)
+                    {
+                        transform.position = (new Vector2(2.32f, transform.position.y));
+                    }
+                    else
+                    {
+                        transform.position = (new Vector2(worldPoint.x, transform.position.y));
+                    }
                 }
             }
         }
