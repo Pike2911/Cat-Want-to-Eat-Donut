@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public static int PlayerLife = 2;
 
-    [SerializeField] private float Walkspeed = 70f;
+    //[SerializeField] private float Walkspeed = 70f;
 
     private Rigidbody2D rb2D;
     private Animator animator;

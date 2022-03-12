@@ -20,39 +20,27 @@ public class SpawnPoint : MonoBehaviour
         xPos = UnityEngine.Random.Range(-2.66f, 3.2f);
         if(ScoreTimer == 50)
         {
-            SpawnTime = 1.25f;
+            SpawnTime = 1.2f;
         }
         else if(ScoreTimer == 100)
         {
-            SpawnTime = 1.1f;
+            SpawnTime = 1f;
         }
         else if(ScoreTimer == 300)
         {
-            SpawnTime = 1;
+            SpawnTime = 0.7f;
         }
         else if(ScoreTimer == 500)
         {
-            SpawnTime = 0.9f;
-        }
-        else if(ScoreTimer == 800)
-        {
-            SpawnTime = 0.8f;
-        }
-        else if(ScoreTimer == 1500)
-        {
             SpawnTime = 0.6f;
         }
-        else if(ScoreTimer == 3000)
+        else if(ScoreTimer == 1500)
         {
             SpawnTime = 0.5f;
         }
         else if(ScoreTimer == 5000)
         {
-            SpawnTime = 0.4f;
-        }
-        else if(ScoreTimer == 100000)
-        {
-            SpawnTime = 0.15f;
+            SpawnTime = 0.3f;
         }
         if (timer >= SpawnTime)
         { 

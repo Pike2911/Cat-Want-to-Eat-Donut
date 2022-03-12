@@ -1625,7 +1625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &992792457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2072,7 +2072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35411c37287603d4a8c2190efde09c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Walkspeed: 20
 --- !u!50 &1355529514
 Rigidbody2D:
   serializedVersion: 4
