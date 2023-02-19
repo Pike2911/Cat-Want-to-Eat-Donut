@@ -45,12 +45,12 @@ public class GameController : MonoBehaviour
     {
         Application.Quit();
     }
-    private void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
         Audio.Play();
     }
-    private void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
         Audio.Stop();

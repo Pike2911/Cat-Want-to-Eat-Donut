@@ -9,7 +9,6 @@ public class item : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            collision.gameObject.GetComponent<PlayerController>().Score();
         }
     }
 }

@@ -6,12 +6,13 @@ public class FailZone : MonoBehaviour
 {
     [SerializeField] private Transform Restart;
     [SerializeField] private Transform PlayAgain;
+    [SerializeField] private GameController gameCon;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Score")
         {
             Destroy(collision.gameObject);
-            PauseGame();
+            gameCon.PauseGame();
             if (PlayerController.PlayerLife > 0)
             {
                 Restart.gameObject.SetActive(true);
@@ -21,10 +22,5 @@ public class FailZone : MonoBehaviour
                 PlayAgain.gameObject.SetActive(true);
             }
         }
-
-    }
-    private void PauseGame()
-    {
-        Time.timeScale = 0;
     }
 }
