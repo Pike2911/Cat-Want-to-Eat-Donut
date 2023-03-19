@@ -8,9 +8,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private AudioSource Audio;
     [SerializeField] private Transform StartButton;
     [SerializeField] private Transform SettingMenu;
+    [SerializeField] private BannerAds bannerAds;
 
     private void Start()
     {
+        bannerAds.LoadBanner();
         PauseGame();
     }
     public void ResetGame()
